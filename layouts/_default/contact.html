@@ -1,0 +1,35 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/contact.css">
+{{end}}
+{{define "main"}}
+    <header class="layout-container">
+        <div class="layout-content">
+            <div class="header-body">
+                <h1>Věda je naším motorem.</h1>
+                <p class="header-text">Dohromady jsme se dali na střední, ale tím to rozhodně nekončí</p>
+            </div>
+            <img src="/media/imgs/base/mark-blk.png">
+        </div>
+    </header>
+    <section class="layout-container" id="contact">
+        <div class="layout-content">
+            {{.Content}}
+        </div>
+    </section>
+    <section class="layout-container" id="join-us">
+        <div class="layout-content">
+            <span>Chceš přinést Zvaž vědu! i do svého města?</span>
+            <a href="/zapojte-se/pridej-se-k-nam" class="secondary-button">Přidej se k nám &rarr;</a>
+        </div>
+    </section>
+    <section class="layout-container" id="actions">
+        <div class="layout-content">
+            <a href="https://discord.gg/XggNwnz5n8" target="_blank" id="actions-discord">
+                <span>Staň se abmasadorem a sleduj náš Discord! <br><br> <i class="fa-brands fa-discord"></i></span>
+            </a>
+            <a href="https://instagram.com/zvaz.vedu?igshid=MzRlODBiNWFlZA==" target="_blank" id="actions-ig">
+                <span>Nejnovější informace sleduj na našem Instagramu! <br><br> <i class="fa-brands fa-instagram"></i></span>
+            </a>
+        </div>
+    </section>
+{{end}}

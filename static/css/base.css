@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* FONT */
+
+html {
+    font-size: 13px;
+    background-color: var(--background);
+}
+body {
+    font-family: 'Inter';
+    font-weight: 400;
+    background-color: var(--background);
+}
+  
+h1, h2, h3, h4, h5 {
+    font-family: 'Inter';
+    font-weight: 700;
+}
+
+
+h1 {
+    font-size: 4.210rem;
+    line-height: 4.210rem;
+}
+
+h2 {font-size: 3.158rem;
+}
+
+h3 {font-size: 2.369rem;
+}
+
+h4 {font-size: 1.777rem;
+}
+
+h5 {font-size: 1.333rem;
+}
+
+small {
+    font-size: 0.750rem;
+}
+
+/* LAYOUT */
+
+.layout-container {
+    width: 100%;
+    padding: var(--spacer);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.layout-content {
+    width: min(90%, 1200px);
+    display: flex;
+    padding: var(--inspacer);
+}
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* NAV */
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    border-bottom: 2px solid var(--secondary-background);
+}
+nav .layout-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.nav-logo img {
+    width: 200px;
+}
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.nav-link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    transition: var(--transition);
+}
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    padding: var(--spacer);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .layout-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: var(--secondary-background);
+    color: var(--text);
+    border-radius: 1rem;
+}
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footer-body {
+    width: min(100%,320px);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer-logo {
+    width: 200px;
+}
+.footer-socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+.footer-socials a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    transition: var(--transition);
+}
+#ig-icon {
+    background: linear-gradient(to bottom left,#833ab4,#fd1d1d,#fcb045 );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#discord-icon {
+    background: #404EED;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.footer-socials a:hover {
+    background: var(--primary) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: .2rem;
+}
+.footer-column-title {
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+.footer-link {
+    text-decoration: none;
+    color: var(--text);
+    transition: var(--transition);
+}
+.footer-link:hover {
+    color: var(--primary);
+}
+.subfooter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* BASE ELEMENTS */
+
+.primary-button {
+    padding: .7em 1.5em;
+    background-color: var(--primary);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    border-radius: .4rem;
+    display: block;
+    width: fit-content;
+}
+.primary-button:hover {
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.secondary-button {
+    padding: .7rem 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    border-radius: .4rem;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+.secondary-button:hover {
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.quote-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 6rem;
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+.quote-title-highlight {
+    position: relative;
+    z-index: 1;
+}
+.quote-title-highlight::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 20px;
+    content: "";
+    bottom: -5px;
+    z-index: -1;
+    transform: rotate(-5deg);
+    border-radius: 5000px;
+}

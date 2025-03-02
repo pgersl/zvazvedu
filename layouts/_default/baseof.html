@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/base.css">
+        {{block "styles" .}}{{end}}
+
+        <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
+        {{block "scripts" .}}{{end}}
+
+        <title>{{.Title}}</title>
+    </head>
+    <body>
+        <nav>
+            <div class="layout-content">
+                <div class="nav-logo">
+                    <a href="/" class="nav-link"><img src="/media/imgs/base/full-logo-blk.png" alt="logo"></a>
+                </div>
+                <div class="nav-links">
+                    <a href="/plzen" class="nav-link primary-button">Plzeň</a>
+                    <a href="/brno" class="nav-link primary-button">Brno</a>
+                    <a href="/praha" class="nav-link primary-button">Praha</a>
+                    <a href="/o-nas" class="nav-link">O nás</a>
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            {{block "main" .}}{{end}}
+        </main>
+        <footer class="layout-container">
+            <div class="layout-content">
+                <div class="footer-container">
+                    <div class="footer-body">
+                        <img class="footer-logo" src="/media/imgs/base/full-logo-blk.png" alt="logo">
+                        <p>
+                            Zvaž vědu! je studentský projekt, který popularizuje vědu mezi středoškoláky. Chceme ukázat, že věda není jen nudná teorie, ale že může být zábavná a nabídnout spoustu zajímavých příležitostí.
+                        </p>
+                        <div class="footer-socials">
+                            <a href="https://instagram.com/zvaz.vedu?igshid=MzRlODBiNWFlZA==" id="ig-icon"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://discord.gg/XggNwnz5n8" id="discord-icon"><i class="fa-brands fa-discord"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <p class="footer-column-title">Navigace</p>
+                            <a href="/" class="footer-link">Domů</a>
+                            <a href="/plzen" class="footer-link">Plzeň</a>
+                            <a href="/brno" class="footer-link">Brno</a>
+                            <a href="/praha" class="footer-link">Praha</a>
+                            <a href="/o-nas" class="footer-link">O nás</a>
+                            <a href="/kontakt" class="footer-link">Kontakt</a>
+                        </div>
+                        <div class="footer-column">
+                            <p class="footer-column-title">Zapojte se</p>
+                            <a href="/zapojte-se/podpora" class="footer-link">Podpořte nás</a>
+                            <a href="/zapojte-se/recnici" class="footer-link">Přednášej u nás</a>
+                            <a href="/zapojte-se/pridej-se-k-nam" class="footer-link">Přidej se k nám</a>
+                            <a href="/zapojte-se/ambasadori" class="footer-link">Staň se ambasadorem</a>
+                        </div>
+                        <div class="footer-column">
+                            <p class="footer-column-title">Kontakt</p>
+                            <a href="mailto:organizatori@zvazvedu.cz" class="footer-link">organizatori@zvazvedu.cz</a>
+                            <a href="mailto:brno@zvazvedu.cz" class="footer-link">brno@zvazvedu.cz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="subfooter">
+                    <p>&copy; {{now.Year}} Zvaž vědu!</p>
+                    <p>Designed by <a class="footer-link" href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

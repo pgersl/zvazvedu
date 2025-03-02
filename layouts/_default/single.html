@@ -1,0 +1,16 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/single.css">
+{{end}}
+
+{{define "main"}}
+    <header class="layout-container">
+        <div class="layout-content">
+            <div class="header-body">
+                <h1>{{.Params.headerTitle}}</h1>
+                <p class="header-text">{{.Params.headerText}}</p>
+            </div>
+            <img src="{{.Params.headerImg}}">
+        </div>
+    </header>
+    {{.Content}}
+{{end}}

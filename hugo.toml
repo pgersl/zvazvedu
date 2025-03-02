@@ -1,3 +1,9 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://zvazvedu.cz/'
+languageCode = 'cs-cz'
+title = 'Zvaž vědu!'
+uglyURLs = false
+enableEmoji = true
+[params]
+    description = 'Oficiální stránky Zvaž vědu!'
+[markup.goldmark.renderer]
+    unsafe = true

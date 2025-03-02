@@ -1,0 +1,109 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/location.css">
+{{end}}
+
+{{define "main"}}
+    <header class="layout-container">
+        <div class="layout-content">
+            <div class="header-body">
+                <h1>Zvaž vědu!<br><span>{{.Params.headerTitle}}</span></h1>
+                <p class="header-text">{{.Params.headerText}}</p>
+                {{with .Params.registration}}<a href="{{.}}" class="primary-button">Přijď na Zvaž vědu!</a>{{end}}
+                {{with .Params.joinUs}}<a href="{{.}}" class="primary-button">Přednášej u nás</a>{{end}}
+            </div>
+            <div class="header-graphics">
+                <img class="header-graphics-photo" src="{{.Params.headerPhoto}}">
+                <img class="header-graphics-logo" src="/favicon/icon.png">
+                <div class="header-graphics-circle"></div>
+            </div>
+        </div>
+    </header>
+    <section class="layout-container" id="content">
+        <div class="layout-content">
+            {{.Content}}
+        </div>
+    </section>
+    {{with .Params.registration}}
+        <section class="layout-container" id="join-us">
+            <div class="layout-content">
+                <span><strong>Máš co říct?</strong></span>
+                <a href="/zapojte-se/recnici" class="secondary-button">Přednášej u nás &rarr;</a>
+            </div>
+        </section>
+        <section class="layout-container" id="cta">
+            <div class="layout-content">
+                <div class="cta-body">
+                    <h2>Na co čekáš?</h2>
+                    <p>Nikdy není příliš brzy na to začít. Přijď na Zvaž vědu! a inspiruj se do vlastních začátků!</p>
+                    <a href="{{.}}" class="primary-button">Registrace</a>
+                </div>  
+                <img src="/media/imgs/base/mark-blk.png">
+            </div>
+        </section>
+    {{end}}
+    <section class="layout-container" id="history">
+        <div class="layout-content">
+            <h2>Ohlédnutí</h2>
+            <div class="history-content">
+                {{range .Pages}}
+                    <div class="history-item">
+                        <strong>{{.Title}}</strong>
+                        <p>{{.Date.Format "2. 1. 2006"}}</p>
+                        <a href="{{.Params.galery}}">Galerie &rarr;</a>
+                        <a href="{{.Params.program}}">Program &rarr;</a>
+                        <a href="{{.RelPermalink}}">Ohlédnutí &rarr;</a>
+                    </div>
+                {{end}}
+            </div>
+        </div>
+    </section>
+    <section class="layout-container" id="team">
+        <div class="layout-content">
+            <h2>Za {{.Title}} stojí...</h2>
+            <div class="team-body">
+                {{if eq .Title "Zvaž vědu! Brno"}}
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/matej.jpg">
+                        </div>
+                        <p class="team-member-name">Matěj</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/petr.jpg">
+                        </div>
+                        <p class="team-member-name">Petr</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/oliver.jpg">
+                        </div>
+                        <p class="team-member-name">Oliver</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/anicka.jpg">
+                        </div>
+                        <p class="team-member-name">Anička</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/monca.jpg">
+                        </div>
+                        <p class="team-member-name">Monča</p>
+                    </div>
+                {{end}}
+            </div>
+        </div>
+    </section>
+    <div class="layout-container" id="parnters">
+        <div class="layout-content">
+            <h2>Partneri</h2>
+            <div class="partner-body">
+                {{if eq .Title "Zvaž vědu! Brno"}}
+                    
+                {{end}}
+            </div>
+        </div>
+    </div>
+{{end}}

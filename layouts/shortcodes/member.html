@@ -1,0 +1,16 @@
+<div class="team-member team-{{.Get "team"}}">
+    <div class="team-member-photo">
+        <img src="/media/imgs/team/{{.Get "photo"}}">
+    </div>
+    <div class="team-member-info">
+        <strong>{{.Get "name"}}</strong>
+        <p>{{.Get "position"}}</p>
+        <p style="margin-bottom:.5rem">{{.Get "school"}}</p>
+        {{with .Get "mail"}}<p><i class="fa-regular fa-envelope"></i><a href="mailto:{{.}}">{{.}}</a></p>{{end}}
+        {{with .Get "web"}}<p><i class="fa-solid fa-globe"></i><a href="https://{{.}}/">{{.}}</a></p>{{end}}
+        <div class="team-member-socials">
+            {{with .Get "ig"}}<a href="{{.}}"><i class="fa-brands fa-instagram"></i></a>{{end}}
+            {{with .Get "linkedin"}}<a href="{{.}}"><i class="fa-brands fa-linkedin"></i></a>{{end}}
+        </div>
+    </div>
+</div>
