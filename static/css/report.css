@@ -71,12 +71,19 @@ h3::after {
 #program .layout-content {
     flex-direction: column;
 }
+.program-table-container {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+}
+.program-table-container::-webkit-scrollbar {
+    display: none;
+}
 .program-table {
     width: 100%;
     border-collapse: collapse;
     border: var(--secondary20) 2px solid;
-    display: block;
-    overflow-x: scroll;
 }
 .program-table-breaker {
     text-align: center;
