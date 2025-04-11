@@ -15,7 +15,7 @@
                 <h3>Fotogalerie</h3>
                 <div class="img-body">
                     {{$name := .File.BaseFileName}}
-                    {{$dir := printf "/media/imgs/gallery/%s" $name}}
+                    {{$dir := printf "static/media/imgs/gallery/%s" $name}}
                     {{range readDir $dir}}
                         {{if not (eq .Name ".DS_Store")}}
                             <a href="/media/imgs/gallery/{{$name}}/{{.Name}}" class="glightbox" data-gallery="gallery1">
