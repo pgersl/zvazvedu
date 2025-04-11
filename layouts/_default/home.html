@@ -28,15 +28,16 @@
     <div class="layout-container" id="what">
         <div class="layout-content">
             <div class="what-section">
+                <img src="/media/imgs/base/mark-blk.png">
                 <h3><img src="/media/imgs/base/mark-blk.png"> Zvaž vědu! je...</h3>
                 <p>Zvaž vědu! je projekt, který se zaměřuje na popularizaci přírodních věd a podporu talentovaných středoškoláků.</p>
             </div>
             <div class="what-section">
-                <img src="/media/imgs/base/goal.png">
+                <i class="fa-solid fa-bullseye"></i>
                 <p>Cílem Zvaž vědu! je motivovat mladé lidi k zájmu o vědu, ukázat jim, že věda není jen nudná teorie, ale že může být zábavná a nabídnout spoustu zajímavých příležitostí.</p>
             </div>
             <div class="what-section">
-                <img src="/media/imgs/base/mic.png">
+                <i class="fa-solid fa-users"></i>
                 <p>Na našich akcích vystupují středoškoláci, kteří mají už něco za sebou, od soutěží po vlastní vědecké projekty.</p>
                 <a href="/o-nas" class="secondary-button">Více &rarr;</a>
             </div>
@@ -48,19 +49,19 @@
     <div class="layout-container" id="stats">
         <div class="layout-content bento-board">
             <div class="bento-board-item bento-row1col1">
-                <strong class="bento-title">3 akce</strong>
+                <strong class="bento-title">{{.Params.events}} akce</strong>
                 <p class="bento-text">v rámci Zvaž vědu!</p>
             </div>
             <div class="bento-board-item bento-row1col2">
-                <strong class="bento-title">25 řečníků</strong>
+                <strong class="bento-title">{{.Params.speakers}} řečníků</strong>
                 <a href="/o-nas/recnici" class="secondary-button">Více &rarr;</a>
             </div>
             <div class="bento-board-item bento-row2col1">
-                <strong class="bento-title">600+ účastníků</strong>
+                <strong class="bento-title">{{.Params.participants}} účastníků</strong>
                 <p class="bento-text">prozatím...</p>
             </div>
             <div class="bento-board-item bento-row2col2">
-                <strong class="bento-title">40 ambasadorů</strong>
+                <strong class="bento-title">{{.Params.ambasadors}} ambasadorů</strong>
                 <a href="/o-nas/recnici" class="secondary-button">Přidej se &rarr;</a>
             </div>
         </div>
@@ -122,7 +123,7 @@
     <div class="layout-container" id="cta">
         <div class="layout-content">
             <div class="quote-title">
-                <span>Nikdy není příliš <br> brzy na to</span><span class="quote-title-highlight" id="zacit">začít.</span>
+                <p id="cta-call">Nikdy není příliš brzy na to <span class="quote-title-highlight" id="zacit">začít.</span></p>
             </div>
             <div id="cta-map">
                 <svg

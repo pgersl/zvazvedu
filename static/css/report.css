@@ -1,0 +1,160 @@
+h3 {
+    margin-bottom: 2rem;
+    display: block;
+    width: fit-content;
+    text-wrap: nowrap;
+    position: relative;
+    z-index: 1;
+}
+h3::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 20px;
+    content: "";
+    bottom: -8px;
+    z-index: -1;
+    transform: rotate(-5deg);
+    border-radius: 5000px;
+    background-color: var(--secondary50);
+}
+
+#content .layout-content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.text-body {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 250px;
+}
+.text-body p {
+    margin-bottom: 1rem;
+}
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+.img-body {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    gap: 2rem;
+    height: 100%;
+    overflow-y: auto;
+    width: fit-content;
+    scrollbar-width: 5px;
+}
+.img-body::-webkit-scrollbar {
+    background-color: var(--secondary20);
+    border-radius: 1000rem;
+    cursor: pointer;
+    width: 8px;
+}
+.img-body::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 1000rem;
+    cursor: pointer;
+}
+.img-body img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    cursor: zoom-in;
+    padding-right: .5rem;
+}
+
+#program .layout-content {
+    flex-direction: column;
+}
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: var(--secondary20) 2px solid;
+    display: block;
+    overflow-x: scroll;
+}
+.program-table-breaker {
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--secondary20);
+}
+.program-table td, .program-table th {
+    padding: .5rem;
+}
+.primary-head {
+    background-color: var(--secondary);
+}
+.secondary-head {
+    background-color: var(--secondary60);
+    text-align: left;
+}
+.program-table td {
+    border-bottom: var(--secondary20) 2px solid;
+}
+.two-rooms tr td:nth-of-type(3) {
+    border-right: var(--secondary20) 2px solid;
+}
+tr td:nth-of-type(1), tr td:nth-of-type(4) {
+    text-wrap: nowrap;
+}
+
+#youtube .layout-content {
+    background-color: var(--secondary30);
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    border-radius: 1rem;
+}
+#youtube .secondary-button {
+    background-color: var(--secondary);
+}
+
+/* MEDIA */
+
+@media (max-width:600px) {
+    #content .layout-content {
+        flex-direction: column-reverse;
+        gap: 4rem;
+        padding-block: 0;
+    }
+    .text-body {
+        width: 100%;
+    }
+    .gallery-container {
+        width: 100%;
+        height: fit-content !important;
+    }
+    .img-body {
+        flex-direction: row;
+        width: 100%;
+        height: fit-content !important;
+    }
+    .img-body img {
+        width: 250px;
+        padding-right: 0;
+        padding-bottom: .5rem;
+    }
+    .img-body::-webkit-scrollbar {
+        width: 100%;
+        height: 8px;
+    }
+}
+
+@media (max-width:520px) {
+    #youtube .layout-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:450px) {
+    #content .layout-content, #program .layout-content {
+        padding-inline: 0;
+    }
+
+}

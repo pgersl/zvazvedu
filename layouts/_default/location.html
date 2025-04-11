@@ -18,11 +18,29 @@
             </div>
         </div>
     </header>
-    <section class="layout-container" id="content">
+    {{if .Params.joinUs}}
+        <section class="layout-container" id="accomplishments">
+            <div class="layout-content bento-board">
+                <div class="bento-board-item">
+                    <strong class="bento-title">{{.Params.events}}</strong>
+                    <p class="bento-text">akce</p>
+                </div>
+                <div class="bento-board-item">
+                    <strong class="bento-title">{{.Params.participants}}</strong>
+                    <p class="bento-text">účastníků</p>
+                </div>
+                <div class="bento-board-item">
+                    <strong class="bento-title">{{.Params.speakers}}</strong>
+                    <p class="bento-text">přednášejících</p>
+                </div>
+            </div>
+        </section>
+    {{end}}
+    <!-- <section class="layout-container" id="content">
         <div class="layout-content">
             {{.Content}}
         </div>
-    </section>
+    </section> -->
     {{with .Params.registration}}
         <section class="layout-container" id="join-us">
             <div class="layout-content">
@@ -46,13 +64,16 @@
             <h2>Ohlédnutí</h2>
             <div class="history-content">
                 {{range .Pages}}
-                    <div class="history-item">
-                        <strong>{{.Title}}</strong>
-                        <p>{{.Date.Format "2. 1. 2006"}}</p>
-                        <a href="{{.Params.galery}}">Galerie &rarr;</a>
-                        <a href="{{.Params.program}}">Program &rarr;</a>
-                        <a href="{{.RelPermalink}}">Ohlédnutí &rarr;</a>
-                    </div>
+                    <a href="{{.RelPermalink}}" class="history-item">
+                        {{$name := .File.BaseFileName }}
+                        {{$dir := printf "/media/imgs/gallery/%s" $name}}
+                        {{$img := printf "%s/main.webp" $dir}}
+                        <img src="{{$img}}">
+                        <div class="history-item-body">
+                            <strong>{{.Title}}</strong>
+                            <em>{{.Date.Format "2. 1. 2006"}}</em>
+                        </div>
+                    </a>
                 {{end}}
             </div>
         </div>
@@ -93,15 +114,71 @@
                         <p class="team-member-name">Monča</p>
                     </div>
                 {{end}}
+                {{if eq .Title "Zvaž vědu! Plzeň"}}
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/maty.jpg">
+                        </div>
+                        <p class="team-member-name">Maty</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/honza.jpg">
+                        </div>
+                        <p class="team-member-name">Honza</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/eda.jpg">
+                        </div>
+                        <p class="team-member-name">Eda</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/david.jpg">
+                        </div>
+                        <p class="team-member-name">David</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/tomas.jpg">
+                        </div>
+                        <p class="team-member-name">Tomáš</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/lucka.jpg">
+                        </div>
+                        <p class="team-member-name">Lucka</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/lucka-vu.jpg">
+                        </div>
+                        <p class="team-member-name">Lucka</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/stepan.jpg">
+                        </div>
+                        <p class="team-member-name">Štěpán</p>
+                    </div>
+                {{end}}
             </div>
         </div>
     </section>
     <div class="layout-container" id="parnters">
         <div class="layout-content">
-            <h2>Partneri</h2>
+            <h2>Partneři</h2>
             <div class="partner-body">
                 {{if eq .Title "Zvaž vědu! Brno"}}
-                    
+
+                {{end}}
+                {{if eq .Title "Zvaž vědu! Plzeň"}}
+
+                {{end}}
+                {{if eq .Title "Zvaž vědu! Praha"}}
+
                 {{end}}
             </div>
         </div>

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "Simon Klinga",
+        "photo": "/media/imgs/speakers/simon-klinga.png",
+        "locations": ["Brno"],
+        "lectures": [{
+            "title": "Ze školní lavice před porotce z NASA (a vlastní družici na raketě SpaceX)",
+            "youtube": "https://www.youtube.com/watch?v=iWbyGRPEGa0&list=PL1NMrPWjk08R2GR8bAcDjt-a1cRGd1KMo&index=3"
+        }],
+        "contact": {
+            "instagram": "https://www.instagram.com/simon_klinga/",
+            "website": "https://klinga.cz/",
+            "linkedin": "https://www.linkedin.com/in/simon-klinga-199a62269/",
+            "facebook": "https://www.facebook.com/SimonKlinga"
+        }
+    },
+    {
+        "name": "Anna Černá",
+        "photo": "/media/imgs/speakers/anna-cerna.png",
+        "locations": ["Brno"],
+        "lectures": [{
+            "title": "Výroba proteinů: mission (im)possible?",
+            "youtube": "https://www.youtube.com/watch?v=4w4Kbed35vw&list=PL1NMrPWjk08R2GR8bAcDjt-a1cRGd1KMo&index=8"
+        }],
+        "contact": {
+            "instagram": "",
+            "website": "",
+            "linkedin": "",
+            "facebook": ""
+        }
+    },
+    {
+        "name": "Tomáš Datinský",
+        "photo": "/media/imgs/speakers/tomas-datinsky.png",
+        "locations": ["Brno"],
+        "lectures": [{
+            "title": "Jak se zapojit do vědy už na střední?",
+            "youtube": "https://www.youtube.com/watch?v=Wvk_oMwS36o&list=PL1NMrPWjk08R2GR8bAcDjt-a1cRGd1KMo&index=4"
+        }],
+        "contact": {
+            "instagram": "",
+            "website": "",
+            "linkedin": "",
+            "facebook": ""
+        }
+    },
+    {
+        "name": "Michal Křipač",
+        "photo": "/media/imgs/speakers/michal-kripac.png",
+        "locations": ["Brno"],
+        "lectures": [{
+            "title": "Jak souvisí informatika s hudbou?",
+            "youtube": "https://www.youtube.com/watch?v=BTZLgmGh3qY&list=PL1NMrPWjk08R2GR8bAcDjt-a1cRGd1KMo&index=2"
+        }],
+        "contact": {
+            "instagram": "",
+            "website": "",
+            "linkedin": "https://www.linkedin.com/in/michal-k%C5%99ipa%C4%8D-75177b269/",
+            "facebook": ""
+        }
+    },
+    {
+        "name": "Sebastian Matoušek",
+        "photo": "/media/imgs/speakers/sebastian-matousek.png",
+        "locations": ["Brno"],
+        "lectures": [{
+            "title": "Jak mě robotika dostala do světa?",
+            "youtube": "https://www.youtube.com/watch?v=oxU6NfcEoG8&list=PL1NMrPWjk08R2GR8bAcDjt-a1cRGd1KMo&index=1"
+        }],
+        "contact": {
+            "instagram": "https://www.instagram.com/sebmatousek/",
+            "website": "",
+            "linkedin": "https://www.linkedin.com/in/sebastian-matou%C5%A1ek-825ba128a/",
+            "facebook": ""
+        }
+    },
+    {
+        "name": "Matěj Šicner",
+        "photo": "/media/imgs/speakers/matej-sicner.jpg",
+        "locations": ["Plzeň"],
+        "lectures": [{
+            "title": "AstroPi",
+            "youtube": "https://www.youtube.com/watch?v=Smb-Vig1Dv8&list=PL1NMrPWjk08Rn13vSeaHO_CmUaAQz60Ti&index=6"
+            },{
+            "title": "Kvantové technologie - dveře do světa nevídaných možností",
+            "youtube": "https://www.youtube.com/watch?v=BQUfMCNOnbQ&list=PL1NMrPWjk08TqugSEkfgSzry_AjJ-T_cN&index=2"
+        }],
+        "contact": {
+            "instagram": "https://www.instagram.com/msicner/",
+            "website": "",
+            "linkedin": "https://www.linkedin.com/in/mat%C4%9Bj-%C5%A1icner-4680ba241/",
+            "facebook": "https://www.facebook.com/matej.sicner.7"
+        }
+    }
+]

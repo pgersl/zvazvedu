@@ -1,0 +1,119 @@
+.header-text {
+    margin-block: 2rem;
+    color: var(--accent);
+}
+header .primary-button {
+    background-color: var(--accent);
+    color: var(--background);
+    font-size: 1.2rem;
+}
+header .primary-button:hover {
+    color: var(--background);
+}
+
+#map svg {
+    max-width: 100%;
+}
+
+#speakers-container {
+    flex-direction: column !important;
+    gap: 3rem;
+}
+
+.speaker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    width: 100%;
+}
+.speaker-photo {
+    width: 150px;
+}
+.speaker-body {
+    display: flex;
+    flex-direction: column;
+}
+.speaker-name {
+    position: relative;
+    display: block;
+    width: fit-content;
+    text-wrap: nowrap;
+    margin-bottom: 1.2rem;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+.speaker-name::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 7px;
+    content: "";
+    bottom: -3px;
+    z-index: -1;
+    transform: rotate(-3deg);
+    border-radius: 5000px;
+    background-color: var(--accent50);
+}
+.speaker-location {
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+.speaker-lectures {
+    list-style-position: outside;
+    margin-left: 1rem;
+}
+.speaker-lectures a {
+    color: var(--text);
+}
+.speaker-lectures a:hover {
+    color: var(--accent);
+}
+.speaker-contacts {
+    margin-top: 1.2rem;
+}
+.speaker-contacts a {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-right: .7rem;
+}
+.speaker-contacts a:hover {
+    color: var(--accent);
+}
+
+/* MEDIA */
+
+@media (max-width:750px) {
+    header .layout-content {
+        flex-direction: column;
+    }
+}
+@media (max-width:540px) {
+    .speaker-photo {
+        width: 80px;
+    }
+    .speaker-name {
+        font-size: 1.1rem;
+        color: var(--accent);
+        margin-bottom: .6rem;
+    }
+    .speaker-name::after {
+        display: none;
+    }
+    .speaker-contacts {
+        margin-top: .6rem;
+    }
+    .speaker-contacts a {
+        font-size: 1.2rem;
+        margin-right: .4rem;
+    }
+    .speaker strong:nth-of-type(2), .speaker-lectures {
+        font-size: .8rem;
+    }
+}
+@media (max-width:450px) {
+    #content .layout-content {
+        padding-inline: 0;
+    }
+}

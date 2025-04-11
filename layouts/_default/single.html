@@ -3,14 +3,10 @@
 {{end}}
 
 {{define "main"}}
-    <header class="layout-container">
+    {{partial "header.html" .}}
+    <div class="layout-container" id="content">
         <div class="layout-content">
-            <div class="header-body">
-                <h1>{{.Params.headerTitle}}</h1>
-                <p class="header-text">{{.Params.headerText}}</p>
-            </div>
-            <img src="{{.Params.headerImg}}">
+            {{.Content}}
         </div>
-    </header>
-    {{.Content}}
+    </div>
 {{end}}
