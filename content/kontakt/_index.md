@@ -3,6 +3,8 @@ title: Kontakt
 layout: contact
 ---
 
+### Plzeň 
+
 {{< member
 name="Matyáš Matta"
 team="plzen"
@@ -66,6 +68,8 @@ photo="stepan.jpg"
 position="organizátor"
 school="Masarykovo gymnázium, Plzeň"
 mail="stepankropacek@zvazvedu.cz" >}}
+
+### Brno
 
 {{< member
 name="Petr Geršl"
