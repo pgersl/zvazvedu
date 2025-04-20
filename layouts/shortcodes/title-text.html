@@ -4,7 +4,7 @@
 <section class="layout-container">
     <div class="layout-content {{with .Get "class"}}{{.}}{{end}}">
         <div class="img-body highlight-{{.Get "color"}}">
-            <img src="{{.Get "img"}}">
+            <img src="{{ .Site.BaseURL }}{{.Get "img"}}">
         </div>
         <div class="text-body">
             {{with .Get "title"}}<h3>{{.}}</h3>{{end}}
