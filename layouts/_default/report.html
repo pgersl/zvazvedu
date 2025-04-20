@@ -1,60 +1,67 @@
 {{define "styles"}}
-    <link rel="stylesheet" href="/css/report.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/report.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
 {{end}}
 
 {{define "scripts"}}
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 {{end}}
 
 {{define "main"}}
-    {{partial "header.html" .}}
-    <section class="layout-container" id="content">
-        <div class="layout-content">
-            <div class="gallery-container">
-                <h3>Fotogalerie</h3>
-                <div class="img-body">
-                    {{$name := .File.BaseFileName}}
-                    {{$dir := printf "static/media/imgs/gallery/%s" $name}}
-                    {{range readDir $dir}}
-                        {{if not (eq .Name ".DS_Store")}}
-                            <a href="/media/imgs/gallery/{{$name}}/{{.Name}}" class="glightbox" data-gallery="gallery1">
-                                <img src="/media/imgs/gallery/{{$name}}/{{.Name}}">
-                            </a>
-                        {{end}}
-                    {{end}}
-                </div>
-                <script>
-                    window.addEventListener("DOMContentLoaded", () => {
-                        function syncHeights() {
-                            const textBody = document.querySelector(".text-body");
-                            const galleryContainer = document.querySelector(".gallery-container");
-                            if (textBody && galleryContainer) {
-                                galleryContainer.style.height = `${textBody.offsetHeight}px`;
-                            }
-                        }
-                        syncHeights();
-                        window.addEventListener("resize", syncHeights);
-                        window.addEventListener("scroll", syncHeights);
-                    });
-                    const lightbox = GLightbox({
-                        touchNavigation: true,
-                        loop: true,
-                    });
-                </script>
-            </div>
-            <div class="text-body">
-                <h3>Ohlédnutí</h3>
-                {{.Content}}
-            
+    {{partial "header.html" .}}
+    <section class="layout-container" id="content">
+        <div class="layout-content">
+            <div class="gallery-container">
+                <h3>Fotogalerie</h3>
+                <div class="img-body">
+                    {{$name := .File.BaseFileName}}
+                    {{$dir := printf "static/media/imgs/gallery/%s" $name}}
 
-        </div>
-    </section>
-    <section class="layout-container" id="youtube">
-        <div class="layout-content">
-            <span>Nestihli jste to? Nevadí!</span>
-            <a href="{{.Params.yt}}" class="secondary-button">Podívej se na přednášky na YouTube &rarr;</a>
-        </div>
-    </section>
+                    {{/* Get .Site.BaseURL BEFORE the readDir loop */}}
+                    {{$baseURL := .Site.BaseURL}}
+
+                    {{range readDir $dir}}
+                        {{if not (eq .Name ".DS_Store")}}
+                            {{/* Use the $baseURL variable inside the loop */}}
+                            <a href="{{ $baseURL }}media/imgs/gallery/{{$name}}/{{.Name}}" class="glightbox" data-gallery="gallery1">
+                                {{/* Use the $baseURL variable inside the loop */}}
+                                <img src="{{ $baseURL }}media/imgs/gallery/{{$name}}/{{.Name}}">
+                            </a>
+                        {{end}}
+                    {{end}}
+                </div>
+                <script>
+                    window.addEventListener("DOMContentLoaded", () => {
+                        function syncHeights() {
+                            const textBody = document.querySelector(".text-body");
+                            const galleryContainer = document.querySelector(".gallery-container");
+                            if (textBody && galleryContainer) {
+                                galleryContainer.style.height = `${textBody.offsetHeight}px`;
+                            }
+                        }
+                        syncHeights();
+                        window.addEventListener("resize", syncHeights);
+                        window.addEventListener("scroll", syncHeights);
+                    });
+                    const lightbox = GLightbox({
+                        touchNavigation: true,
+                        loop: true,
+                    });
+                </script>
+            </div>
+            <div class="text-body">
+                <h3>Ohlédnutí</h3>
+                {{.Content}}
+
+
+            </div>
+        </div>
+    </section>
+    <section class="layout-container" id="youtube">
+        <div class="layout-content">
+            <span>Nestihli jste to? Nevadí!</span>
+            <a href="{{.Params.yt}}" class="secondary-button">Podívej se na přednášky na YouTube &rarr;</a>
+        </div>
+    </section>
 
 {{end}}
