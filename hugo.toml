@@ -1,4 +1,4 @@
-baseURL = 'https://zvazvedu.cz/'
+baseURL = 'https://zvaz-vedu.netlify.app/'
 languageCode = 'cs-cz'
 title = 'Zvaž vědu!'
 uglyURLs = false
