@@ -1,5 +1,5 @@
 {{define "styles"}}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/location.css">
+    <link rel="stylesheet" href="/css/location.css">
 {{end}}
 
 {{define "main"}}
@@ -8,12 +8,12 @@
             <div class="header-body">
                 <h1>Zvaž vědu!<br><span>{{.Params.headerTitle}}</span></h1>
                 <p class="header-text">{{.Params.headerText}}</p>
-                {{with .Params.registration}}<a href="{{. | absURL}}" class="primary-button">Přijď na Zvaž vědu!</a>{{end}}
-                {{with .Params.joinUs}}<a href="{{. | absURL}}" class="primary-button">Přednášej u nás</a>{{end}}
+                {{with .Params.registration}}<a href="{{.}}" class="primary-button">Přijď na Zvaž vědu!</a>{{end}}
+                {{with .Params.joinUs}}<a href="{{.}}" class="primary-button">Přednášej u nás</a>{{end}}
             </div>
             <div class="header-graphics">
-                <img class="header-graphics-photo" src="{{ .Site.BaseURL }}{{.Params.headerPhoto}}">
-                <img class="header-graphics-logo" src="{{ .Site.BaseURL }}favicon/icon.png">
+                <img class="header-graphics-photo" src="{{.Params.headerPhoto}}">
+                <img class="header-graphics-logo" src="/favicon/icon.png">
                 <div class="header-graphics-circle"></div>
             </div>
         </div>
@@ -36,11 +36,16 @@
             </div>
         </section>
     {{end}}
+    <section class="layout-container" id="content">
+        <div class="layout-content">
+            {{.Content}}
+        </div>
+    </section>
     {{with .Params.registration}}
         <section class="layout-container" id="join-us">
             <div class="layout-content">
                 <span><strong>Máš co říct?</strong></span>
-                <a href="{{ .Site.BaseURL }}zapojte-se/recnici" class="secondary-button">Přednášej u nás &rarr;</a>
+                <a href="/zapojte-se/recnici" class="secondary-button">Přednášej u nás &rarr;</a>
             </div>
         </section>
         <section class="layout-container" id="cta">
@@ -50,7 +55,7 @@
                     <p>Nikdy není příliš brzy na to začít. Přijď na Zvaž vědu! a inspiruj se do vlastních začátků!</p>
                     <a href="{{.}}" class="primary-button">Registrace</a>
                 </div>  
-                <img src="{{ .Site.BaseURL }}media/imgs/base/mark-blk.png">
+                <img src="/media/imgs/base/mark-blk.png">
             </div>
         </section>
     {{end}}
@@ -61,9 +66,9 @@
                 {{range .Pages}}
                     <a href="{{.RelPermalink}}" class="history-item">
                         {{$name := .File.BaseFileName }}
-                        {{$dir := printf "media/imgs/gallery/%s" $name}}
-                        {{$img_path := printf "%s/main.webp" $dir}}
-                        <img src="{{ .Site.BaseURL }}{{$img_path}}">
+                        {{$dir := printf "/media/imgs/gallery/%s" $name}}
+                        {{$img := printf "%s/main.webp" $dir}}
+                        <img src="{{$img}}">
                         <div class="history-item-body">
                             <strong>{{.Title}}</strong>
                             <em>{{.Date.Format "2. 1. 2006"}}</em>
@@ -78,23 +83,86 @@
             <h2>Za {{.Title}} stojí...</h2>
             <div class="team-body">
                 {{if eq .Title "Zvaž vědu! Brno"}}
-                    <!-- team members for Brno -->
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/matej.jpg"></div><p class="team-member-name">Matěj</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/petr.jpg"></div><p class="team-member-name">Petr</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/oliver.jpg"></div><p class="team-member-name">Oliver</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/anicka.jpg"></div><p class="team-member-name">Anička</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/monca.jpg"></div><p class="team-member-name">Monča</p></div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/matej.jpg">
+                        </div>
+                        <p class="team-member-name">Matěj</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/petr.jpg">
+                        </div>
+                        <p class="team-member-name">Petr</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/oliver.jpg">
+                        </div>
+                        <p class="team-member-name">Oliver</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/anicka.jpg">
+                        </div>
+                        <p class="team-member-name">Anička</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/monca.jpg">
+                        </div>
+                        <p class="team-member-name">Monča</p>
+                    </div>
                 {{end}}
                 {{if eq .Title "Zvaž vědu! Plzeň"}}
-                    <!-- team members for Plzeň -->
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/maty.jpg"></div><p class="team-member-name">Maty</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/honza.jpg"></div><p class="team-member-name">Honza</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/eda.jpg"></div><p class="team-member-name">Eda</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/david.jpg"></div><p class="team-member-name">David</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/tomas.jpg"></div><p class="team-member-name">Tomáš</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/lucka.jpg"></div><p class="team-member-name">Lucka</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/lucka-vu.jpg"></div><p class="team-member-name">Lucka</p></div>
-                    <div class="team-member"><div class="team-member-photo-container"><img class="team-member-photo" src="{{ .Site.BaseURL }}media/imgs/team/stepan.jpg"></div><p class="team-member-name">Štěpán</p></div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/maty.jpg">
+                        </div>
+                        <p class="team-member-name">Maty</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/honza.jpg">
+                        </div>
+                        <p class="team-member-name">Honza</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/eda.jpg">
+                        </div>
+                        <p class="team-member-name">Eda</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/david.jpg">
+                        </div>
+                        <p class="team-member-name">David</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/tomas.jpg">
+                        </div>
+                        <p class="team-member-name">Tomáš</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/lucka.jpg">
+                        </div>
+                        <p class="team-member-name">Lucka</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/lucka-vu.jpg">
+                        </div>
+                        <p class="team-member-name">Lucka</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-photo-container">
+                            <img class="team-member-photo" src="/media/imgs/team/stepan.jpg">
+                        </div>
+                        <p class="team-member-name">Štěpán</p>
+                    </div>
                 {{end}}
             </div>
         </div>
@@ -104,10 +172,13 @@
             <h2>Partneři</h2>
             <div class="partner-body">
                 {{if eq .Title "Zvaž vědu! Brno"}}
+
                 {{end}}
                 {{if eq .Title "Zvaž vědu! Plzeň"}}
+
                 {{end}}
                 {{if eq .Title "Zvaž vědu! Praha"}}
+
                 {{end}}
             </div>
         </div>
