@@ -10,6 +10,12 @@
     flex-wrap: wrap;
 }
 
+#contact h3 {
+    width: 100%;
+    text-align: center;
+    color: var(--primary);
+}
+
 .team-member {
     width: 210px;
 }

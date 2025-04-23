@@ -1,5 +1,5 @@
 {{define "styles"}}
-    <link rel="stylesheet" href="/css/speakers.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/speakers.css">
 {{end}}
 
 {{define "main"}}
@@ -8,7 +8,7 @@
             <div class="header-body">
                 <h1>Tihle už u nás přednášeli.</h1>
                 <p class="header-text">Budeš mezi nimi i ty?</p>
-                <a class="primary-button" href="/zapojte-se/recnici">Přednášej u nás!</a>
+                <a class="primary-button" href="{{ .Site.BaseURL }}zapojte-se/recnici">Přednášej u nás!</a>
             </div>
             <div id="map">
                 <svg
@@ -303,7 +303,7 @@
         <div class="layout-content" id="speakers-container"></div>
         <template id="speaker-template">
             <div class="speaker">
-                <img class="speaker-photo" src="" alt="">
+                <img class="speaker-photo" src="{{ .Site.BaseURL }}" alt="">
                 <div class="speaker-body">
                     <strong class="speaker-name"></strong>
                     <strong>Přednášky:</strong>
@@ -318,7 +318,8 @@
             </div>
         </template>
         <script>
-            fetch('/json/speakers.json')
+          const baseURL = '{{ .Site.BaseURL }}';
+          fetch(baseURL + 'json/speakers.json')
               .then(response => response.json())
               .then(speakers => {
                 const container = document.getElementById('speakers-container');
@@ -327,7 +328,7 @@
                 speakers.forEach(speaker => {
                   const clone = template.content.cloneNode(true);
             
-                  clone.querySelector('.speaker-photo').src = speaker.photo;
+                  clone.querySelector('.speaker-photo').src = baseURL + speaker.photo;
                   clone.querySelector('.speaker-photo').alt = speaker.name;
                   clone.querySelector('.speaker-name').textContent = speaker.name;
             

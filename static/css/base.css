@@ -285,7 +285,7 @@ header img {
 
 /* MEDIA */
 
-@media (max-width:700px) {
+@media (max-width:760px) {
     .nav-logo a:first-of-type {
         display: none;
     }
@@ -330,7 +330,7 @@ header img {
     }
 }
 
-@media (max-width:550px) {
+@media (max-width:570px) {
     nav {
         font-size: .8rem;
     }
@@ -342,7 +342,7 @@ header img {
     }
 }
 
-@media (max-width:450px) {
+@media (max-width:500px) {
     nav .layout-content {
         padding-inline: 0;
     }
