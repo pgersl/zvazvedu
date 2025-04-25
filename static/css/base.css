@@ -214,6 +214,9 @@ footer .layout-content {
     border-radius: .4rem;
     display: block;
     width: fit-content;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
 }
 .primary-button:hover {
     box-shadow: var(--shadow);
@@ -228,6 +231,10 @@ footer .layout-content {
     border-radius: .4rem;
     width: fit-content;
     text-wrap: nowrap;
+    transition: var(--transition);
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
 }
 .secondary-button:hover {
     box-shadow: var(--shadow);

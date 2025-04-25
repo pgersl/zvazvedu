@@ -35,6 +35,7 @@ header .primary-button:hover {
     display: flex;
     flex-direction: column;
 }
+
 .speaker-name {
     position: relative;
     display: block;
@@ -56,6 +57,7 @@ header .primary-button:hover {
     border-radius: 5000px;
     background-color: var(--accent50);
 }
+
 .speaker-location {
     margin-bottom: 1rem;
     font-style: italic;
@@ -70,6 +72,7 @@ header .primary-button:hover {
 .speaker-lectures a:hover {
     color: var(--accent);
 }
+
 .speaker-contacts {
     margin-top: 1.2rem;
 }
@@ -80,6 +83,82 @@ header .primary-button:hover {
 }
 .speaker-contacts a:hover {
     color: var(--accent);
+}
+
+.speaker-bio {
+    margin-top: 1.2rem;
+}
+.speaker-bio .secondary-button {
+    background-color: var(--accent20);
+}
+.speaker-bio .secondary-button i {
+    margin-left: .5rem;
+    font-size: .8rem;
+}
+.speaker-bio-text {
+    display: none;
+    margin-top: 1.2rem;
+    transition: var(--transition);
+}
+
+#speaker-filters {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+#speaker-search {
+    font-size: 1rem;
+    padding: .5rem .8rem;
+    border-radius: .5rem;
+    background-color: var(--accent5);
+    border: 1px solid var(--text50);
+    width: 190px;
+}
+#speaker-search:focus {
+    border-color: var(--accent);
+}
+.speaker-filters-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+#location-brno, #location-praha, #location-plzeň {
+    appearance: none;
+    background-color: var(--accent5);
+    margin: 0;
+    font: inherit;
+    color: var(--text);
+    width: 1.15em;
+    height: 1.15em;
+    margin-right: .3rem;
+    margin-left: 1.2rem;
+    border: 0.15em solid var(--text);
+    border-radius: .3rem;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+#location-brno {
+    margin-left: 0;
+}
+#location-brno:checked, #location-praha:checked, #location-plzeň:checked {
+    border-color: var(--accent);
+}
+#location-brno::before, #location-praha::before, #location-plzeň::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: .2rem;
+    transform: scale(0);
+    transition: 50ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--accent80);
+}
+#location-brno:checked:before, #location-praha:checked:before, #location-plzeň:checked:before {
+    transform: scale(1);
 }
 
 /* MEDIA */
@@ -111,9 +190,28 @@ header .primary-button:hover {
     .speaker strong:nth-of-type(2), .speaker-lectures {
         font-size: .8rem;
     }
+    .speaker .secondary-button {
+        font-size: .8rem;
+        padding: .4rem .6rem;
+    }
+    .speaker-bio-text {
+        font-size: .8rem;
+    }
 }
-@media (max-width:450px) {
+@media (max-width:480px) {
     #content .layout-content {
         padding-inline: 0;
+    }
+    #speaker-filters {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .speaker-filters-container {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .speaker-search-container {
+        width: 100%;
     }
 }
