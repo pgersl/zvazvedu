@@ -11,4 +11,7 @@ joinUs: "https://docs.google.com/forms/d/e/1FAIpQLSfcJ-UBJbM2AViK-YROJKVnQNVMPbJ
 events: "2"
 participants: "150+"
 speakers: "9"
+
+team: [petr, matěj, oliver, anička, monča]
+partners: [hvezdarna-cz, eserocz-cz]
 ---

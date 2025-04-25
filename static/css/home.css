@@ -349,34 +349,6 @@
     fill: var(--accent) !important;
 }
 
-/* PARTNERS */
-
-#partners .layout-content {
-    background-color: var(--primary10);
-    border-radius: 1rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-#partner-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    width: 100%;
-}
-.partner-link img {
-    height: 40px;
-    width: auto;
-    transition: var(--transition);
-}
-.partner-link:hover img {
-    filter:brightness(0);
-}
-
 /* MEDIA */
 
 @media (max-width:1080px) {

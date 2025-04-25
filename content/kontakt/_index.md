@@ -40,7 +40,7 @@ mail="davidnemec@zvazvedu.cz" >}}
 {{< member
 name="Tomáš Rajchman"
 team="plzen"
-photo="tomas.jpg"
+photo="tomáš.jpg"
 position="koordinátor pro ICT"
 school="Masarykovo gymnázium, Plzeň"
 mail="tomasrajchman@zvazvedu.cz" >}}
@@ -64,7 +64,7 @@ mail="lucievu@zvazvedu.cz" >}}
 {{< member
 name="Štěpán Kropáček"
 team="brno"
-photo="stepan.jpg"
+photo="štěpán.jpg"
 position="organizátor"
 school="Masarykovo gymnázium, Plzeň"
 mail="stepankropacek@zvazvedu.cz" >}}
@@ -85,7 +85,7 @@ linkedin="https://www.linkedin.com/in/petr-geršl-9324491a6" >}}
 {{< member
 name="Matěj Šicner"
 team="brno"
-photo="matej.jpg"
+photo="matěj.jpg"
 position="hlavní organizátor pro Brno"
 school="Cyrilometodějské gymnázium, Brno"
 mail="brno@zvazvedu.cz" >}}
@@ -101,7 +101,7 @@ mail="oklimes@cmgp.cz" >}}
 {{< member
 name="Anna Černá"
 team="brno"
-photo="anicka.jpg"
+photo="anička.jpg"
 position="organizátorka pro Brno"
 school="Klvaňovo gymnázium, Kyjov"
 mail="anna1458black@gmail.com" >}}
@@ -109,7 +109,7 @@ mail="anna1458black@gmail.com" >}}
 {{< member
 name="Monika Dlouhá"
 team="brno"
-photo="monca.jpg"
+photo="monča.jpg"
 position="organizátorka pro Brno"
 school="Gymnázium Matyáše Lercha, Brno"
 mail="xdlouha@gml.cz" >}}

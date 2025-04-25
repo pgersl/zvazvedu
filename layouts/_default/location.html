@@ -82,105 +82,18 @@
         <div class="layout-content">
             <h2>Za {{.Title}} stojí...</h2>
             <div class="team-body">
-                {{if eq .Title "Zvaž vědu! Brno"}}
+                {{range .Params.team}}
                     <div class="team-member">
                         <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/matej.jpg">
+                            <img class="team-member-photo" src="/media/imgs/team/{{.}}.jpg">
                         </div>
-                        <p class="team-member-name">Matěj</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/petr.jpg">
-                        </div>
-                        <p class="team-member-name">Petr</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/oliver.jpg">
-                        </div>
-                        <p class="team-member-name">Oliver</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/anicka.jpg">
-                        </div>
-                        <p class="team-member-name">Anička</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/monca.jpg">
-                        </div>
-                        <p class="team-member-name">Monča</p>
-                    </div>
-                {{end}}
-                {{if eq .Title "Zvaž vědu! Plzeň"}}
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/maty.jpg">
-                        </div>
-                        <p class="team-member-name">Maty</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/honza.jpg">
-                        </div>
-                        <p class="team-member-name">Honza</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/eda.jpg">
-                        </div>
-                        <p class="team-member-name">Eda</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/david.jpg">
-                        </div>
-                        <p class="team-member-name">David</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/tomas.jpg">
-                        </div>
-                        <p class="team-member-name">Tomáš</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/lucka.jpg">
-                        </div>
-                        <p class="team-member-name">Lucka</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/lucka-vu.jpg">
-                        </div>
-                        <p class="team-member-name">Lucka</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-member-photo-container">
-                            <img class="team-member-photo" src="/media/imgs/team/stepan.jpg">
-                        </div>
-                        <p class="team-member-name">Štěpán</p>
+                        {{$teamName := split . "-"}}
+                        {{$teamName = index $teamName 0}}
+                        <p class="team-member-name">{{$teamName}}</p>
                     </div>
                 {{end}}
             </div>
         </div>
     </section>
-    <div class="layout-container" id="parnters">
-        <div class="layout-content">
-            <h2>Partneři</h2>
-            <div class="partner-body">
-                {{if eq .Title "Zvaž vědu! Brno"}}
-
-                {{end}}
-                {{if eq .Title "Zvaž vědu! Plzeň"}}
-
-                {{end}}
-                {{if eq .Title "Zvaž vědu! Praha"}}
-
-                {{end}}
-            </div>
-        </div>
-    </div>
+    {{partial "partners.html" .}}
 {{end}}

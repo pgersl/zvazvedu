@@ -11,4 +11,7 @@ joinUs: "https://docs.google.com/forms/d/e/1FAIpQLSfcJ-UBJbM2AViK-YROJKVnQNVMPbJ
 events: "2"
 participants: "600+"
 speakers: "27"
+
+team: [maty, honza, eda, david, tomáš, lucka, lucka-vu, štěpán]
+partners: [plzensky--kraj-cz, podporatalentu-cz, fav-zcu-cz, radovanek-cz]
 ---

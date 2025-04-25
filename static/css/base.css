@@ -263,6 +263,33 @@ footer .layout-content {
     border-radius: 5000px;
 }
 
+#partners .layout-content{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--secondary10);
+    padding: var(--inspacer);
+    border-radius: 1.5rem;
+}
+.partner-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.partner-body img {
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+}
+.partner-body img:hover {
+    filter: brightness(0);
+}
+
 /* HEADER */
 
 header .layout-content {

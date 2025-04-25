@@ -1,0 +1,12 @@
+<section class="layout-container" id="partners">
+    <div class="layout-content">
+        <strong>Partneři</strong>
+        <div class="partner-body">
+            {{range .Params.partners}}
+                {{$partnerLink := replace . "-" "."}}
+                {{$partnerLink := replace $partnerLink ".." "-"}}
+                <a href="https://www.{{$partnerLink}}/" target="blank"><img src="/media/imgs/partners/{{.}}.png"></a>
+            {{end}}
+        </div>
+    </div>
+</section>
